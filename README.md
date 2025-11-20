@@ -122,37 +122,8 @@ pytest tests/ -v
 pytest tests/ -v --cov=app --cov-report=html
 ```
 
-## Verification Checklist
-- [ ] All files created in correct directories
-- [ ] .env file has valid OPENAI_API_KEY
-- [ ] Dependencies installed
-- [ ] API starts without errors
-- [ ] Health check returns 200: http://localhost:8000/health
-- [ ] Swagger docs accessible: http://localhost:8000/docs
-- [ ] Can analyze sentiment successfully
-
-## Common Issues
-
-**Issue: ModuleNotFoundError**
-- Make sure all __init__.py files exist
-- Check you're running from project root
-
-**Issue: OPENAI_API_KEY not found**
-- Verify .env file exists in project root
-- Check API key is correctly set in .env
-
-**Issue: Port 8000 already in use**
-- Change port: `uvicorn app.main:app --port 8001`
-- Or in docker-compose.yml: `"8001:8000"`
-
-## Next Steps
-1. Read the full README.md
-2. Explore API docs at /docs
-3. Try different test cases
-4. Customize configuration in .env
-```
-
----
+## Test the api working in terminal on user input
+python test_user_input.py
 
 ## Complete File Tree
 
