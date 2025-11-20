@@ -159,3 +159,145 @@ sentiment-analysis-api/
 ├── quick_test.py
 ├── setup_project.sh
 └── SETUP_STEPS.md
+
+# Additional files
+
+ All these files do the testing on independent working of files.
+
+### Test 1
+
+python test_config.py
+```
+
+**Expected Output:**
+```
+Testing Configuration...
+==================================================
+✓ App Name: Sentiment Analysis API
+✓ Version: 1.0.0
+✓ Environment: development
+✓ Log Level: INFO
+✓ Model: gpt-4o-mini
+✓ Temperature: 0.3
+✓ Max Tokens: 150
+✓ Cache Enabled: True
+✓ Allowed Origins: ['http://localhost:3000', 'http://localhost:8000']
+✓ API Key: sk-proj-xx...xxxx
+✓ Is Development: True
+✓ Is Production: False
+==================================================
+✅ Configuration test passed!
+
+### Test 2
+
+python test_models.py
+```
+
+**Expected Output:**
+```
+Testing Pydantic Models...
+==================================================
+
+1. Testing SentimentLabel...
+   ✓ SentimentLabel enum works
+
+2. Testing valid SentimentRequest...
+   ✓ Valid request created
+
+3. Testing whitespace stripping...
+   ✓ Whitespace stripped correctly
+
+4. Testing empty text validation...
+   ✓ Empty text rejected correctly
+
+5. Testing whitespace-only text...
+   ✓ Whitespace-only text rejected correctly
+
+6. Testing text length limit...
+   ✓ Text length limit enforced
+
+7. Testing SentimentResponse...
+   ✓ SentimentResponse created successfully
+
+8. Testing HealthResponse...
+   ✓ HealthResponse created successfully
+
+9. Testing ErrorResponse...
+   ✓ ErrorResponse created successfully
+
+==================================================
+✅ All model tests passed!
+
+### Test 3: LangChain
+
+python test_service.py
+```
+
+**Expected Output:**
+```
+Testing Sentiment Analysis Service...
+==================================================
+
+1. Initializing service...
+   ✓ Service initialized
+
+2. Testing positive sentiment...
+   Text: I love this product! It's amazing!
+   Sentiment: positive
+   Confidence: 0.95
+   Explanation: The text expresses strong positive emotions...
+   ✓ Positive sentiment detected correctly
+
+3. Testing negative sentiment...
+   Text: This is terrible. I'm very disappointed.
+   Sentiment: negative
+   Confidence: 0.92
+   Explanation: The text contains negative words...
+   ✓ Negative sentiment detected correctly
+
+4. Testing neutral sentiment...
+   Text: The weather is okay today.
+   Sentiment: neutral
+   Confidence: 0.75
+   Explanation: The text has a neutral tone...
+   ✓ Sentiment analyzed
+
+5. Testing cache...
+   First call: positive
+   Second call (cached): positive
+   ✓ Cache working
+
+6. Testing cache stats...
+   Cache size: 3
+   Cache enabled: True
+   ✓ Cache stats retrieved
+
+7. Testing cache clear...
+   Cache size after clear: 0
+   ✓ Cache cleared successfully
+
+==================================================
+✅ All service tests passed!
+
+### Test 4
+
+python test_routes.py
+```
+
+**Expected Output:**
+```
+Testing API Routes...
+==================================================
+
+1. Testing health check...
+   Status: healthy
+   Version: 1.0.0
+   Environment: development
+   ✓ Health check working
+
+2. Testing cache stats...
+   Cache stats: {'cache_size': 0, 'cache_enabled': True}
+   ✓ Cache stats endpoint working
+
+==================================================
+✅ All route tests passed!
