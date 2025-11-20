@@ -54,7 +54,7 @@ Copy to project root:
 - `Dockerfile`
 - `docker-compose.yml`
 - `Makefile`
-
+You can see requirements.txt file under -->Go to file 
 ### Step 5: Create .env File
 ```bash
 cp .env.example .env
