@@ -24,3 +24,20 @@ echo "2. Copy .env.example, requirements.txt, Dockerfile, docker-compose.yml to 
 echo "3. Add your OPENAI_API_KEY to .env file"
 echo "4. Run: pip install -r requirements.txt"
 echo "5. Run: uvicorn app.main:app --reload"
+
+# __init__ file
+# # app/__init__.py
+# """Sentiment Analysis API package."""
+# __version__ = "1.0.0"
+
+# # app/api/__init__.py
+# """API routes package."""
+
+# # app/services/__init__.py
+# """Services package."""
+
+# # app/utils/__init__.py
+# """Utilities package."""
+
+# # tests/__init__.py
+# """Tests package."""
